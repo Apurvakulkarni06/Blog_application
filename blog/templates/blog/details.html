@@ -13,6 +13,7 @@
 </div>
                 
 <a href="/blog" class="btn">Go Back</a>
+<a class="btn btn-default" href="{% url 'blog:post_edit' id=post.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
 
 {% endblock %}
 
