@@ -39,16 +39,17 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('email')
+            username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(email=email, password=raw_password)
             login(request, user)
-            return redirect('home')
+            return redirect('blog:index')
     else:
         form = SignUpForm()
     return render(request, 'blog/signup.html', {'form': form})
-# add the new post
 
+# add the new post
 def post_new(request):
 
     if request.method == "POST":

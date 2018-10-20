@@ -1,17 +1,14 @@
 
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Post
 
-class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+class SignUpForm(forms.ModelForm):
+    password1 = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ( 'email', 'password1', )
+        fields = ( 'username','email', 'password1', )
 
 class PostForm(forms.ModelForm):
 

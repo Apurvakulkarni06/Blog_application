@@ -8,29 +8,19 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <!-- logo of the website -->
-            <div class="navbar-header">
-                <button type="button" class="navbar=toggle" data-toggle="collapse" data-target="#topNavBar">
-                    <span class="icon=bar"></span>
-                    <span class="icon=bar"></span>
-                    <span class="icon=bar"></span>
-                    <span class="icon=bar"></span>
-                                        
-                </button>
-                <a href="{% url 'blog:index' %}" class="navbar-brand">Blog Application</a>
-            </div>
-
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
         </div>
     </nav>
     <header class="container center-align">
         <h1>Blog Application</h1>
     </header>
-    <div class="page-header">
-        <a href="{% url 'blog:post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-    </div>
     <div class="container">
         {%  block content %}
         {% endblock %}
